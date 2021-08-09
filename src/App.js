@@ -12,11 +12,11 @@ export default function App() {
   };
   const submitHandle = () => {
     console.log("state", state);
-    const { fname, phone, city } = state;
-    fname.disable = true;
-    phone.disable = true;
-    city.disable = true;
-    setState({ ...state });
+    const updateState = JSON.parse(JSON.stringify(state));
+    updateState.fname.disable = true;
+    updateState.phone.disable = true;
+    updateState.city.disable = true;
+    setState(updateState);
   };
 
   return (
